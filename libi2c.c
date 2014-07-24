@@ -234,9 +234,8 @@ int li2c_writeread(const char *devnode,
 
     //write data to I2C bus
     bwrote = write(fd, w, wlen);
-    deinit_fd(fd);
     if(bwrote <= 0) {
-        fprintf(stderr, "li2c_writeread: Fail to write data to I2C bus.\n");
+        fprintf(stderr, "li2c_writeread: Failed to write data to I2C bus.\n");
         return -1;
     } else if(bwrote < wlen) {
         fprintf(stderr,
@@ -250,7 +249,7 @@ int li2c_writeread(const char *devnode,
     bread = read(fd, r, rlen);
     deinit_fd(fd);
     if(bread <= 0) {
-        fprintf(stderr, "li2c_writeread: Fail to read data from I2C bus.\n");
+        fprintf(stderr, "li2c_writeread: Failed to read data from I2C bus.\n");
         return -1;
     } else if(bread < rlen) {
         fprintf(stderr,
