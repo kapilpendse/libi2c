@@ -1,0 +1,3 @@
+libi2c provides the capability of reading and writing I2C messages by standard
+Linux way. It exposes the following functions:
+
